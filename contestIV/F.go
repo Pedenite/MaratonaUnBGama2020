@@ -19,6 +19,7 @@ func main(){
 
 	for i:=0; D[i] <= X; i++ {
 		if i == N {
+			qtd++
 			break
 		}
 		D = append(D, D[i]+L[i])
