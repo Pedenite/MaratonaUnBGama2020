@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# But not these files...
+!*.c
+!*.cpp
+!*.java
+!*.go
+!*.hs
+!*.py
+!*.md
+!.gitignore
+
+# ...even if they are in subdirectories
+!*/
