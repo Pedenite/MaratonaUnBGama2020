@@ -1,5 +1,3 @@
-package contestI;
-
 import java.util.Scanner;
 
 public class B { // rename to Main
