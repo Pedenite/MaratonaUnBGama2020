@@ -8,5 +8,5 @@ https://vjudge.net/contest/366999
 - [X] B - Right Triangle 
 - [X] C - ABC333 
 - [X] D - Digit Sums 
-- [ ] E - Time Limit Exceeded
+- [x] E - Time Limit Exceeded
 - [ ] F - Pair
