@@ -7,4 +7,4 @@ https://vjudge.net/contest/366112
 - [x] C - Happy Birthday! 
 - [x] D - Cats and Dogs 
 - [x] E - Maximum Sum 
-- [ ] F - Digits Sum 
+- [x] F - Digits Sum 
