@@ -2,6 +2,8 @@
 
 https://vjudge.net/contest/367916
 
+### Acceptance list:
+
 - [x] A - Buttons
 - [x] B - Airplane
 - [x] C - Five Antennas 

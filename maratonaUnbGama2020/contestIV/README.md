@@ -2,6 +2,8 @@
 
 https://vjudge.net/contest/368340
 
+### Acceptance list:
+
 - [x] A - Favorite Sound 
 - [x] B - Biscuit Generator 
 - [x] C - Ferris Wheel 
