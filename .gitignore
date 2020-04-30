@@ -10,6 +10,8 @@
 !*.py
 !*.md
 !.gitignore
+!*.png
+!*.pdf
 
 # ...even if they are in subdirectories
 !*/
