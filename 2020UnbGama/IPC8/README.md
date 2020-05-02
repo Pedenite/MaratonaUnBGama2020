@@ -4,8 +4,8 @@ https://vjudge.net/contest/371101
 
 ### Acceptance list:
 
-- [ ] A - Mishka and Game
-- [ ] B - Heist
+- [x] A - Mishka and Game
+- [x] B - Heist
 - [ ] C - Games
 - [ ] D - Design Tutorial: Learn from Math
 - [ ] E - Buggy Sorting
