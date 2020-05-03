@@ -4,8 +4,8 @@ https://vjudge.net/contest/370464
 
 ### Acceptance list:
 
-- [ ] A - Wrong Subtraction
-- [ ] B - Cards
+- [x] A - Wrong Subtraction
+- [x] B - Cards
 - [ ] C - Even Substrings
 - [ ] D - Anton and Letters
 - [ ] E - Buying A House
