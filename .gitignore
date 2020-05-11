@@ -12,6 +12,7 @@
 !.gitignore
 !*.png
 !*.pdf
+|*.txt
 
 # ...even if they are in subdirectories
 !*/
