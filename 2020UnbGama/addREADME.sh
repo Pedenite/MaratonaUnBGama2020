@@ -1,2 +1,4 @@
-mkdir $1
-cat sample.txt > $1/README.md
+mkdir newdir
+num=$(echo */ | wc -w)
+mv newdir IPC$num
+cat sample.txt > IPC$num/README.md
