@@ -4,11 +4,11 @@ https://vjudge.net/contest/374875
 
 ### Acceptance list:
 
-- [ ] A - 
-- [ ] B - 
-- [ ] C - 
-- [ ] D - 
-- [ ] E - 
-- [ ] F - 
-- [ ] G - 
-- [ ] H - 
+- [x] A - Bear and Big Brother
+- [x] B - Kyoya and Photobooks
+- [x] C - Tavas and Nafas
+- [ ] D - Anton and Classes
+- [x] E - TL
+- [ ] F - Appleman and Card Game
+- [ ] G - Sereja and Bottles
+- [ ] H - Load Balancing
