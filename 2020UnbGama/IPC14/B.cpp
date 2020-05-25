@@ -24,5 +24,6 @@ int main(){
 		cout << "Still Rozdil";
 	} else {
 		cout << res;
-	}	
+	}
+	return 0;
 }
