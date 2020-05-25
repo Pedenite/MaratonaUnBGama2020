@@ -9,4 +9,4 @@ https://vjudge.net/contest/366999
 - [X] C - ABC333 
 - [X] D - Digit Sums 
 - [x] E - Time Limit Exceeded
-- [ ] F - Pair
+- [x] F - Pair
