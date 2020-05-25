@@ -26,7 +26,7 @@ func main()
         r2 = append(r2, temp2)
     }
 
-    // for i:=0; i < n; i++ {   DESCARTADO POR SER MUITO LENTO. pENSAR EM FORMA MELHOR DEPOIS
+    // for i:=0; i < n; i++ {   DESCARTADO POR SER MUITO LENTO. PENSAR EM FORMA MELHOR DEPOIS
     //     for j:=0; j < m; j++ {
             
     //     }
