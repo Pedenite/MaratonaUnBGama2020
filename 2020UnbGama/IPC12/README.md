@@ -6,9 +6,9 @@ https://vjudge.net/contest/374592
 
 - [x] A - Elephant
 - [x] B - Pineapple Incident
-- [ ] C - 
-- [ ] D - 
-- [ ] E - 
-- [ ] F - 
-- [ ] G - 
-- [ ] H - 
+- [ ] C - Buying a TV Set
+- [ ] D - IQ Test
+- [ ] E - Alphabetic Removals
+- [ ] F - Find The Bone
+- [ ] G - Jeopardy!
+- [ ] H - Nastya and a Wardrobe
