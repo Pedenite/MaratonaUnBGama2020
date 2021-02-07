@@ -15,6 +15,7 @@
 !*.txt
 !*.sh
 !*.bat
+!*.gitkeep
 
 # ...even if they are in subdirectories
 !*/
