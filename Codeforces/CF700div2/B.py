@@ -27,8 +27,8 @@ for i in range(t):
 
     choose_enemy(a, b)
 
-    while b[n-1] > 0 and B > 0: 
-        for j in range(n):
+    for j in range(n):
+        while b[j] > 0 and B > 0:
             B -= a[j]
             b[j] -= A
 
@@ -36,5 +36,3 @@ for i in range(t):
         print("NO")
     else:
         print("YES")
-
-
