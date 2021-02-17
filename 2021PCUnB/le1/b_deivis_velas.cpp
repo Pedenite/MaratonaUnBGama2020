@@ -10,21 +10,19 @@ using namespace std;
 
 int main() {
     int n, k;
-    int nova;
+    int time = 0;
 
     cin >> n >> k;
     
-    nova = (n/k);
-    int time = n + nova;
-    while (nova >= k) {
-        nova /= k;
-        if (nova % k) {
-            nova = nova;
+    while (n > 0) {
+        time++;
+        if (time%k == 0) {
+            n++;
         }
-        time += nova;
+        n--;
     }
 
-    cout << time;
+    cout << time << "\n";
 
     return 0;
 }
