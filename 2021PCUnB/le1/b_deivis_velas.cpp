@@ -10,26 +10,21 @@ using namespace std;
 
 int main() {
     int n, k;
-    float nova, piece = 0.0;
+    int nova;
 
     cin >> n >> k;
     
     nova = (n/k);
-    int res = n + nova;
+    int time = n + nova;
     while (nova >= k) {
         nova /= k;
-        if ((int) nova % k) {
-            piece += nova - (int) nova;
-            nova = (int) nova;
+        if (nova % k) {
+            nova = nova;
         }
-        res += nova;
-
-        if (piece >= k) {
-            res++;
-        }
+        time += nova;
     }
 
-    cout << res;
+    cout << time;
 
     return 0;
 }
