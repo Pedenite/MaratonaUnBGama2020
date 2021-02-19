@@ -9,14 +9,14 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    ll l, r, aux;
+    ll l, r, maior;
 
     cin >> l >> r;
-    for (aux = 1; aux < r; aux++) {
-        aux <<= 1;
+    for (maior = 1; maior < r; maior++) {
+        maior <<= 1;
     }
 
-    cout << aux;
+    cout << maior;
 
     return 0;
 }
