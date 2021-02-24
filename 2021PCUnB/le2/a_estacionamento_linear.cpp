@@ -9,19 +9,14 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    ll n, k, res;
+    int n, k, c, s;
+    vector<ii> a;
 
-    cin >> n >> k;
-    if (n >= k) {
-        res = 1;
-    } else {
-        res = k/n;
-        if (k%n != 0) {
-            res++;
-        }
+    scanf("%d %d", &n, &k);
+    while (n--) {
+        scanf("%d %d", &c, &s);
+        
     }
-
-    printf("%lld\n", res);
 
     return 0;
 }
