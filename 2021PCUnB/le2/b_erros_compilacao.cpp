@@ -43,6 +43,9 @@ int main() {
     while (!a.empty() && (l2 == 0 || l1 == 0)) {
         if (l1 == 0 && (a.top() != b.top() || b.empty())) {
             l1 = a.top();
+            if (l2 == 0) {
+                c.push(l1);
+            }
         } else if (l2 == 0 && (a.top() != c.top() || c.empty())) {
             l2 = a.top();
         }
@@ -56,3 +59,8 @@ int main() {
 
     return 0;
 }
+
+// 10
+// 3 8 2 9 4 8 3 7 5 1
+// 3 8 2 4 8 3 7 5 1          
+// 3 8 2 4 8 7 5 1
