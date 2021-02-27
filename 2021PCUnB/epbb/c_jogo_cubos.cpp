@@ -20,7 +20,13 @@ int main() {
 
     sort(a.begin(), a.end());
     while (m--) {
-        
+        cin >> qi;
+        ai = lower_bound(a.begin(), a.end(), qi)-a.begin();
+        if (ai >= a.size() || a[ai] != qi) {
+            ai = -2;
+        }
+
+        cout << (ai+1) << ' ';
     }
 
     return 0;

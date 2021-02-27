@@ -9,14 +9,8 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    int n, r, m, tmp;
-    vi t;
+    int n;
 
-    cin >> n >> r >> m;
-    while (n--) {
-        cin >> tmp;
-        t.pb(tmp);
-    }
-
+    
     return 0;
 }
