@@ -9,24 +9,26 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    int n, t, c, qtd, tmp;
-    set<int> pris;
+    int n, t, c, qtd = 0, tmp, res = 0;
 
     scanf("%d %d %d", &n, &t, &c);
     while (n--) {
         scanf("%d", &tmp);
         if (tmp > t) {
-            continue;
+            if (qtd >= c) {
+                res += qtd-c+1;
+            }
+            qtd = 0;
+        } else {
+            qtd++;
         }
-
-        pris.insert(tmp);
     }
 
-    for (auto i : pris) {
-        printf("%d,", i);
+    if (qtd >= c) {
+        res += qtd-c+1;
     }
 
-    printf("\n");
+    printf("%d\n", res);
 
     return 0;
 }
