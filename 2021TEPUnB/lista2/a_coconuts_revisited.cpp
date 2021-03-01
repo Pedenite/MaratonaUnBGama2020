@@ -16,6 +16,9 @@ int main() {
         if (n == -1) {
             break;
         }
+
+        printf("%d coconuts, ", n);
+        
     }
 
     return 0;
