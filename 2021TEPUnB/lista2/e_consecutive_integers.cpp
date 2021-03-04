@@ -13,7 +13,9 @@ int main() {
             break;
         }
 
-        resl = resr = res = 1;
+        resl = 1;
+        resr = sqrt(n);
+        res = (resr*(resr+1))/2;
         while (res != n) {
             if (res > n) {
                 res -= resl;
