@@ -29,33 +29,23 @@ int main() {
     sort(c.begin(), c.end(), greater<int>());
 
     k = k1 + k2;
-    i = 0;
     while (k > 0) {
-        if (c[i] == c[i+1]) {
+        i = 0;
+        while (c[i] == c[i+1]) {
             i++;
-            continue;
+            if (i == c.size()-1) {
+                break;
+            }
         }
 
-        int tmp = min((c[i]-c[i+1])*(i+1), k);
-        k -= tmp;
-        c[i] -= tmp/(i+1);
-        k += tmp%(i+1);
-
-        if (k <= i) {
-            for (int j = 0; j <= i; j++) {
-                if (k == 0) {
-                    break;
-                }
-
-                c[j]++;
-                k--;
-            }
+        k--;
+        c[i]--;
+        if (c[i] < 0) {
+            c[i] = 1;
         }
     }
 
-    sum += pow(c[i], 2) * (i+1);
-    i++;
-    for (; i < c.size(); i++) {
+    for (i = 0; i < c.size(); i++) {
         sum += pow(c[i], 2);
     }
 
