@@ -9,8 +9,8 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    int n, k1, k2, ai, bi, sum = 0;
-    vi a, b;
+    int n, k1, k2, k, ai, bi, sum = 0;
+    vi a, c;
 
     scanf("%d %d %d", &n, &k1, &k2);
     int i = n;
@@ -19,17 +19,44 @@ int main() {
         a.pb(ai);
     }
 
-    i = n;
-    while (i--) {
+    i = 0;
+    while (i < n) {
         scanf("%d", &bi);
-        b.pb(bi);
+        c.pb(abs(a[i] - bi));
+        i++;
     }
 
-    while (n--) {
-        int op = abs(a[i] - b[i]);
-        op;//...
+    sort(c.begin(), c.end(), greater<int>());
 
-        sum += pow(op, 2);
+    k = k1 + k2;
+    i = 0;
+    while (k > 0) {
+        if (c[i] == c[i+1]) {
+            i++;
+            continue;
+        }
+
+        int tmp = min((c[i]-c[i+1])*(i+1), k);
+        k -= tmp;
+        c[i] -= tmp/(i+1);
+        k += tmp%(i+1);
+
+        if (k <= i) {
+            for (int j = 0; j <= i; j++) {
+                if (k == 0) {
+                    break;
+                }
+
+                c[j]++;
+                k--;
+            }
+        }
+    }
+
+    sum += pow(c[i], 2) * (i+1);
+    i++;
+    for (; i < c.size(); i++) {
+        sum += pow(c[i], 2);
     }
 
     printf("%d\n", sum);
