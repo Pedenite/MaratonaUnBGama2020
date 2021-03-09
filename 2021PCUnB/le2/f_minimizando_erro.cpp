@@ -9,7 +9,8 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    int n, k1, k2, k, ai, bi, sum = 0;
+    int n, k1, k2, k, ai, bi;
+    ll sum = 0;
     vi a, c;
 
     scanf("%d %d %d", &n, &k1, &k2);
@@ -46,10 +47,10 @@ int main() {
     }
 
     for (i = 0; i < c.size(); i++) {
-        sum += pow(c[i], 2);
+        sum += pow((ll) c[i], 2);
     }
 
-    printf("%d\n", sum);
+    printf("%lld\n", sum);
 
     return 0;
 }
