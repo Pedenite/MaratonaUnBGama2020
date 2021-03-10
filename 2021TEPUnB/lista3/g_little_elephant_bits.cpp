@@ -1,15 +1,26 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-#define vi vector<int>
-#define ll long long
-#define pb push_back
-#define mp make_pair
-#define ii pair<int,int>
-
 int main() {
-    int a;
+    char tmp;
+    bool passed = false;
+    string res;
+
+    do {
+        tmp = getchar();
+        if (tmp == '0' && !passed) {
+            passed = true;
+            continue;
+        }
+
+        res += tmp;
+    } while (tmp != '\n' && tmp != EOF);
+
+    if (!passed) {
+        res.erase(0, 1);
+    }
+
+    cout << res;
 
     return 0;
 }
