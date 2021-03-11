@@ -1,19 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vll vector<ll>
+#define vi vector<int>
 #define pb push_back
 
 int main() {
-    ll n, q, ai, l, r;
-    vll a;
+    int n, q, ai, l, r;
+    vi a;
 
     cin >> n >> q;
     for (int i = 0; i < n; i++) {
         cin >> ai;
         if (i > 0) {
-            a.pb(ai + a[i-1]);
+            a.pb(ai ^ a[i-1]);
         } else {
             a.pb(ai);
         }
@@ -24,7 +23,7 @@ int main() {
         if (l <= 1) {
             cout << a[r-1] << endl;
         } else {
-            cout << (a[r-1]-a[l-2]) << endl;
+            cout << (a[r-1]^a[l-2]) << endl;
         }
     }
 
