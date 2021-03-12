@@ -7,33 +7,6 @@ using namespace std;
 #define mp make_pair
 #define ii pair<int,int>
 
-vll split(string s) {
-	string tmp;
-	vll res;
-	for (auto c : s) {
-		if (c == ' ' || c == '\n' || c == EOF) {
-			res.pb(stoi(tmp));
-			tmp = "";
-		} else {
-			tmp += c;
-		}
-	}
-
-	if (tmp != "") {
-		res.pb(stoi(tmp));
-	}
-
-	return res;
-}
-
-void print_vector(vll a) {
-	for (auto e : a) {
-		cout << e << ' ';
-	}
-
-	cout << '\n';
-}
-
 ll derivada(vll nums, ll x) {
 	ll res = 0;
 	for (int i = 0; i < nums.size(); i++) {
@@ -45,18 +18,22 @@ ll derivada(vll nums, ll x) {
 }
 
 int main() {
-	ll x;
-	string as;
-	
-    while (scanf("%lld", &x) != EOF) {
-		as = "";
-		cin.ignore();
-		getline(cin, as);
+	ll x, ai, res;
+	vll a;
+    while (cin >> x) {
+        string s;
+        getline(cin, s);
+        getline(cin, s);
+        stringstream sin;
+        sin << s;
+		a.clear();
+        while (sin >> ai) {
+            a.pb(ai);
+		}
 
-		vll a = split(as);
 		a.pop_back();
-		cout << derivada(a, x) << endl;
-	}
+        cout << derivada(a, x) << endl;
+    }
 
     return 0;
 }
