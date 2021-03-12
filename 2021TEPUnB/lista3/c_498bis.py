@@ -1,11 +1,9 @@
 from sys import stdin
 
 def derivada(nums, x):
-	exp = 0
 	res = 0
-	for i in range(len(nums)-1, 0, -1):
-		res += nums[i]*(x**exp)
-		exp += 1
+	for i, a in enumerate(nums):
+		res += a*(i+1)*(x**i)
 
 	return res
 
@@ -18,6 +16,7 @@ for line in stdin:
 		x = int(line.strip('\n'))
 	else:
 		lista = list(map(int, line.strip('\n').split(' ')))
+		lista.pop()
 	
 	if lista != []:
 		print(derivada(lista, x))
