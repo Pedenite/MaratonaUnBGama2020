@@ -3,8 +3,11 @@
 
 # But not these files...
 !*.c
+!*.cc
 !*.cpp
 !*.java
+!*.gvy
+!*.groovy
 !*.go
 !*.hs
 !*.py

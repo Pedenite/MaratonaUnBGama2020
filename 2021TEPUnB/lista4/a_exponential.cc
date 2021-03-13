@@ -8,11 +8,10 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    ll x;
+    int x;
 
-    while (scanf("%lld", &x) != EOF) {
-        
-    }
+    cin >> x;
+    
 
     return 0;
 }
