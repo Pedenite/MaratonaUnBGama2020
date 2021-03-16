@@ -1,24 +1,11 @@
 #include <bits/stdc++.h>
-// #include <unistd.h>
-
 using namespace std;
 
 #define vi vector<int>
-#define ll long long
 #define pb push_back
-#define mp make_pair
-#define ii pair<int,int>
-
-void print_vi(vi a) {
-    for (auto e : a) {
-        cout << e << ' ';
-    }
-
-    cout << endl;
-}
 
 int main() {
-    int n, m, pi, x, y;
+    int n, m, pi, x, y, diff = 0x7fffffff;
     vi p;
 
     cin >> n >> m;
@@ -29,30 +16,13 @@ int main() {
 
     sort (p.begin(), p.end());
 
-    int index = lower_bound(p.begin(), p.end(), m/2)-p.begin();
-
-    if (index < p.size()-1 && (abs(p[index]+p[index+1] - m) <= abs(p[index]+p[index-1] - m))) {
-        x = p[index];
-        y = p[index+1];
-    } else {
-        x = p[index-1];
-        y = p[index];
-    }
-
-    // cout << index << endl;
-    // print_vi(p);
-
-    int i = 0;
-    while (x+y != m) {
-        // cout << (x+y) << endl;
-        // cout.flush();
-        // usleep(1000000);
-        if (x+y < m) {
-            i++;
-            y = p[index+i+1];
-        } else {
-            i--;
-            x = p[index+i];
+    for (int i = 0; i < p.size(); i++) {
+        int esperado = m - p[i];
+        int index = lower_bound(p.begin(), p.end(), esperado)-p.begin();
+        if (index < p.size() && p[index] == esperado && i != index && abs(p[i]-esperado) < diff) {
+            diff = abs(p[i]-esperado);
+            x = p[i];
+            y = p[index];
         }
     }
 
