@@ -1,17 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define vi vector<int>
-#define ll long long
-#define pb push_back
-#define mp make_pair
-#define ii pair<int,int>
-
 int main() {
-    int x;
+    int x, maior = 0;
 
     cin >> x;
-    
+    if (x < 4) {
+        cout << x << endl;
+        return 0;
+    }
+
+    for (int i = 2; pow(i, 2) <= x; i++) {
+        for (int j = 2; pow(i, j) <= x; j++) {
+            int res = pow(i, j);
+            if (res > maior) {
+                maior = res;
+            }
+        }
+    }
+
+    cout << maior << endl;
 
     return 0;
 }
