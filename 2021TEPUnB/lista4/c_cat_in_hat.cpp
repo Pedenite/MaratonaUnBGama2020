@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define vi vector<int>
-#define pb push_back
-
 int main() {
-    int n, k;
+    int h, n;
 
+    while (scanf("%d %d", &h, &n) && h && n) {
+        
+    }    
     
-
     return 0;
 }
