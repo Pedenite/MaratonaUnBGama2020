@@ -8,7 +8,7 @@ using namespace std;
 #define ii pair<int,int>
 
 int main() {
-    int n, m, c, sum = 0;
+    int n, m, c, sum = 0, maior = 0;
     vi v;
 
     cin >> n >> m;
@@ -16,11 +16,16 @@ int main() {
         cin >> c;
         v.pb(c);
         sum += c;
+        if (c > maior) {
+            maior = c;
+        }
     }
 
     sort(v.begin(), v.end());
+    int ideal = min(sum/m, maior);
+    for (int i = 0; i < m; i++) {
 
-    
+    }
 
     return 0;
 }

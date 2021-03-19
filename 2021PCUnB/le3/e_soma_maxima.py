@@ -1,29 +1,28 @@
-def busca_binaria(x, query):
-    l = 0
-    r = len(x)-1
-    mid = 0
-    while l <= r:
-        mid = int((r+l)/2)
-        if x[mid] == query:
-            return mid
-        elif x[mid] < query:
-            l = mid+1
-        else:
-            r = mid-1
+def solve(x, p):
+    l = r = 0
+    qtd = 0
+    maior = 0
+    soma = 0
+    while l < len(x):
+        if r < l:
+            r = l
+        # print(soma, l, r)
 
-    if x[mid] > query:
-        return mid-1
-    
-    return mid
+        if soma > p or r >= len(x):
+            soma -= x[l]
+            l += 1
+            qtd -= 1
+            if qtd > maior:
+                maior = qtd
+        else:
+            soma += x[r]
+            qtd += 1
+            r += 1
+
+    return maior
+
 
 n, p = map(int, input().split())
 x = list(map(int, input().split()))
 
-for i in range(1, len(x)):
-    x[i] += x[i-1]
-
-index = busca_binaria(x, p)
-if x[0] > p:
-    print(0)
-else:
-    print(index+1)
+print(solve(x, p))
