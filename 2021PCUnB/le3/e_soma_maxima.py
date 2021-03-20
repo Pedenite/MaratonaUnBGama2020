@@ -1,28 +1,24 @@
-def solve(x, p):
-    l = r = 0
-    qtd = 0
-    maior = 0
-    soma = 0
-    while l < len(x):
-        if r < l:
-            r = l
-        # print(soma, l, r)
-
-        if soma > p or r >= len(x):
-            soma -= x[l]
-            l += 1
-            qtd -= 1
-            if qtd > maior:
-                maior = qtd
-        else:
-            soma += x[r]
-            qtd += 1
-            r += 1
-
-    return maior
-
-
 n, p = map(int, input().split())
 x = list(map(int, input().split()))
 
-print(solve(x, p))
+l = r = 0
+maior = 0
+soma = 0
+while l < len(x) and r < len(x):
+    if r < l:
+        r = l
+
+    if r-l > maior and soma <= p:
+        maior = r-l
+
+    if soma > p:
+        soma -= x[l]
+        l += 1
+    else:
+        soma += x[r]
+        r += 1
+
+if r-l > maior and soma <= p:
+    maior = r-l
+
+print(maior)

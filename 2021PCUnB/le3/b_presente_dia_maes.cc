@@ -21,11 +21,27 @@ int main() {
         }
     }
 
-    sort(v.begin(), v.end());
     int ideal = min(sum/m, maior);
-    for (int i = 0; i < m; i++) {
 
+    sort(v.begin(), v.end());
+    while (ideal > 0) {
+        int abastecidas = 0;
+        int pos = (lower_bound(v.begin(), v.end(), ideal)-v.begin());
+        for (int i = pos; i < v.size(); i++) {
+            abastecidas += v[i]/ideal;
+            if (abastecidas >= m) {
+                break;
+            }
+        }
+
+        if (abastecidas >= m) {
+            break;
+        }
+
+        ideal--;
     }
+
+    cout << ideal << endl;
 
     return 0;
 }
