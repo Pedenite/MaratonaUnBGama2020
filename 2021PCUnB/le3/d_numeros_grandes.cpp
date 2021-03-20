@@ -16,10 +16,6 @@ ll f(ll x) {
 }
 
 ll solve(ll n, ll y) {
-    if (n-f(n) < y) {
-        return 0;
-    }
-
     ll l = y;
     ll r = n;
     ll ans = 0;
