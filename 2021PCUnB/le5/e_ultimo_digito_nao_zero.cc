@@ -13,7 +13,7 @@ int get_digitos(ll n) {
 }
 
 int main() {
-    ll n, m, arranjo = 1;
+    ll n, m, arranjo = 1, curr_digs = 10000000000000000L;
 
     scanf("%lld %lld", &n, &m);
     for (int i = n; i > n-m; i--) {
@@ -22,13 +22,15 @@ int main() {
             arranjo /= 10;
         }
 
-        int val = 1;
-        int lim = get_digitos(i);
-        while (lim--) {
-            val *= 10;
+        if (i < curr_digs/10) {
+            curr_digs = 1;
+            int lim = get_digitos(i);
+            while (lim--) {
+                curr_digs *= 10;
+            }
         }
 
-        arranjo %= val;
+        arranjo %= curr_digs;
     }
 
     printf("%lld\n", arranjo%10);

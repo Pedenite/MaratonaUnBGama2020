@@ -1,30 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int qnt_divs(int n) {
-    int divs = 0;
-    int b;
-    
-    for (int i = 1; i*i <= n; i++) {
-        if (n % i)
-            continue;
+#define MAX (int) (1E6+5)
 
-        b = n/i;
-        divs++;
-        if (i != b)
-            divs++;
-    }
+int divs[MAX];
 
-    return divs;
+void compute_divs() {
+    int b, qtd;
+    divs[1] = 1;
+
+    for (int n = 2; n < MAX; n++) {
+        qtd = 0;
+        for (int i = 1; i*i <= n; i++) {
+            if (n % i)
+                continue;
+
+            b = n/i;
+            qtd++;
+            if (i != b)
+                qtd++;
+        }
+
+        divs[n] = qtd;
+    } 
 }
 
 int main() {
     int q, x;
 
+    compute_divs();
     scanf("%d", &q);
     while (q--) {
         scanf("%d", &x);
-        printf("%d\n", qnt_divs(x));
+        printf("%d\n", divs[x-1]);
     }
 
     return 0;
