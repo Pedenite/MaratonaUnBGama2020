@@ -7,6 +7,7 @@ int divs[MAX];
 
 void compute_divs() {
     int b, qtd;
+    divs[0] = 0;
     divs[1] = 1;
 
     for (int n = 2; n < MAX; n++) {
@@ -32,7 +33,7 @@ int main() {
     scanf("%d", &q);
     while (q--) {
         scanf("%d", &x);
-        printf("%d\n", divs[x-1]);
+        printf("%d\n", divs[x]);
     }
 
     return 0;
