@@ -6,24 +6,12 @@ using namespace std;
 int divs[MAX];
 
 void compute_divs() {
-    int b, qtd;
     divs[0] = 0;
-    divs[1] = 1;
-
-    for (int n = 2; n < MAX; n++) {
-        qtd = 0;
-        for (int i = 1; i*i <= n; i++) {
-            if (n % i)
-                continue;
-
-            b = n/i;
-            qtd++;
-            if (i != b)
-                qtd++;
+    for(int x = 1; x < MAX; x++) {
+        for(int m = x; m < MAX; m += x) {
+            divs[m]++;
         }
-
-        divs[n] = qtd;
-    } 
+    }
 }
 
 int main() {
