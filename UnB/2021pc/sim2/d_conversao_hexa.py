@@ -1,0 +1,1 @@
+print(int(input(),16)%int(1e9+7))
