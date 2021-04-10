@@ -1,1 +1,0 @@
-the quantity of prime numbers between 1 and n can be aproximated by n/ln(n)
