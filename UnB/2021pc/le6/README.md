@@ -1,10 +1,11 @@
 # Lista de Exercícios VI - Grafos: algoritmos de busca
 
-link...
+https://codeforces.com/group/kS016T9X2j/contest/324026
 
 ## Conteúdo
 * UnBalloon: https://github.com/UnBalloon/programacao-competitiva/tree/master/Grafos
 * Vídeoaula: https://www.youtube.com/watch?v=LaqF9GXtubk
+* Encontro: https://www.youtube.com/watch?v=DcM55lIBdWI
 * Exercício: https://codeforces.com/problemset/problem/520/B
 	* Solução: https://www.youtube.com/watch?v=LaqF9GXtubk
 * Exercício: https://www.urionlinejudge.com.br/judge/pt/problems/view/2230
