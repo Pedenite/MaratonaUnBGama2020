@@ -1,17 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define pb push_back
-#define mp make_pair
-#define MAX (int) (1e5+1)
-#define mod (int) (1e9+7)
-#define forn(j,n) for(int i = j; i < n; i++)
-typedef vector<int> vi;
 typedef long long ll;
-typedef pair<int,int> ii;
+
+ll mul(ll a, ll b, ll m) {
+    auto r = (a * b) % m;
+    return r < 0 ? r + m : r;
+}
+
+ll fast_exp_mod(ll a, ll n, ll m) {
+    ll res = 1, base = a;
+    while (n) {
+        if (n & 1)
+            res = mul(res, base, m);
+
+        base = mul(base, base, m);
+        n >>= 1;
+    }
+
+    return res;
+}
 
 int main() {
-    // code
+    int t, n, k, l, r;
+
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d %d", &n, &k);
+        l = 123; // no idea
+        r = fast_exp_mod(n, k, 1000);
+        printf("%d...%d\n", l, r);
+    }
 
     return 0;
 }
