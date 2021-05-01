@@ -21,15 +21,24 @@ ll fast_exp_mod(ll a, ll n, ll m) {
     return res;
 }
 
+ll msd_exp(ll a, ll b) {
+    long double tmp = (double) b * log10(a);
+    tmp -= floor(tmp);
+    double res = pow(10, tmp);
+
+    return (ll) floor(res)*100;
+}
+
 int main() {
-    int t, n, k, l, r;
+    int t, n, k;
+    ll l, r;
 
     scanf("%d", &t);
     while (t--) {
         scanf("%d %d", &n, &k);
-        l = 123; // no idea
+        l = msd_exp(n, k);
         r = fast_exp_mod(n, k, 1000);
-        printf("%d...%d\n", l, r);
+        printf("%lld...%lld\n", l, r);
     }
 
     return 0;
