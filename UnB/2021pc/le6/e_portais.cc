@@ -1,20 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define pb push_back
-#define mp make_pair
-#define MAX (int) (1e5+1)
-#define mod (int) (1e9+7)
-#define forn(j,n) for(int i = j; i < n; i++)
-typedef vector<int> vi;
-typedef long long ll;
-typedef pair<int,int> ii;
+#define MAX (int) 1e5
+
+vector<int> g[MAX];
+int visited[MAX];
+
+void dfs(int u) {
+    visited[u] = true;
+    for (int v : g[u]) {
+        if (!visited[v]) {
+            dfs(v);
+        }
+    }
+}
 
 int main() {
-    int n, t;
+    int n, t, ai; 
 
     scanf("%d %d", &n, &t);
-    
+    for (int i = 1; i < n; i++) {
+        scanf("%d", &ai);
+        int j = i+ai;
+        g[i].push_back(j);
+    }
+
+    dfs(1);
+    printf("%s\n", visited[t] ? "sim" : "nao");
 
     return 0;
 }
