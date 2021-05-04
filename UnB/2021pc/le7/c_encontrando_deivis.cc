@@ -1,15 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define MAX (int) (1e5+1)
 #define oo 0x7fffffff
 typedef vector<vector<pair<int, int>>> grafo;
 
-int d[MAX];
-grafo g(MAX);
-
-void dijkstra(int start, int n){
-	for(int u = 1; u <= n; u++)
+void dijkstra(int start, grafo &g, int d[]){
+	for(int u = 1; u <= g.size(); u++)
 		d[u] = oo;
 
 	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
@@ -36,15 +32,37 @@ void dijkstra(int start, int n){
 	}
 }
 
+void add_edge(grafo &g, bool direc, int orig, int dest, int w) {
+	g[orig].push_back(make_pair(dest, w));
+	if (!direc) {
+		g[dest].push_back(make_pair(orig, w));
+	}
+}
+
 int main() {
-    int n, c;
+    int n, c, d_ober[30], d_taxi[30];
     char ot, ub, x, y;
+	grafo g_ober(30);
+	grafo g_taxi(30);
 
     scanf("%d\n", &n);
     for (int i = 0; i < n; i++) {
         scanf("%c %c %c %c %d", &ot, &ub, &x, &y, &c);
-        
+		int orig = x - 'A' +1;
+		int dest = y - 'A' +1;
+        if (ot == 'O') {
+			add_edge(g_ober, ub == 'U', orig, dest, c);
+		} else {
+			add_edge(g_taxi, ub == 'U', orig, dest, c);
+		}
     }
+
+	char andre, deivis;
+	scanf("%c %c", &andre, &deivis);
+	dijkstra(andre, g_ober, d_ober);
+	dijkstra(deivis, g_taxi, d_taxi);
+
+	
 
     return 0;
 }
