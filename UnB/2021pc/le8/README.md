@@ -1,6 +1,6 @@
 # Lista de Exercícios VIII - Programação Dinâmica
 
-link...
+https://codeforces.com/group/kS016T9X2j/contest/327001
 
 ## Conteúdo
 * UnBalloon: https://github.com/UnBalloon/Programacao-Competitiva/tree/master/Programa%C3%A7%C3%A3o%20din%C3%A2mica
