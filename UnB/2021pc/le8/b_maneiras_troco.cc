@@ -11,7 +11,16 @@ typedef long long ll;
 typedef pair<int,int> ii;
 
 int main() {
-    // code
+    int n, x, mi;
+    vector<int> m;
+
+    scanf("%d %d", &n, &x);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", mi);
+        m.push_back(mi);
+    }
+
+    
 
     return 0;
 }
