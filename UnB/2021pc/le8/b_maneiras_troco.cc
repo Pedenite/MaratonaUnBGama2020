@@ -1,26 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define pb push_back
-#define mp make_pair
-#define MAX (int) (1e5+1)
 #define mod (int) (1e9+7)
-#define forn(j,n) for(int i = j; i < n; i++)
-typedef vector<int> vi;
-typedef long long ll;
-typedef pair<int,int> ii;
+#define MAX (int) (1e5+1)
 
-int main() {
-    int n, x, mi;
-    vector<int> m;
+int n, res;
+vector<int> valores;
 
-    scanf("%d %d", &n, &x);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", mi);
-        m.push_back(mi);
+int tab[MAX];
+
+int dp(int k){
+	if(k == 0) {
+        res++;
+		return 0;
     }
 
-    
+	if(tab[k] != -1) {
+		return tab[k];
+    }
+
+	int melhor = 1e9; 
+	for(int i = 0; i < n; i++){
+		if(valores[i] <= k)
+			melhor = min(melhor,1 + dp(k - valores[i]));
+	}
+
+	return tab[k] = melhor;
+}
+
+int main() {
+    int x, mi;
+
+    scanf("%d %d", &n, &x);
+
+    for (int i = 0; i < MAX; i++)
+        tab[i] = -1;
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &mi);
+        valores.push_back(mi);
+    }
+
+    res = 0;
+    dp(x);
+    printf("%d\n", res);
 
     return 0;
 }
