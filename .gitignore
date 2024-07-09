@@ -14,6 +14,7 @@
 !*.md
 !.gitignore
 !*.png
+!*.jpeg
 !*.pdf
 !*.txt
 !*.sh
